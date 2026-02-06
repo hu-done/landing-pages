@@ -26,17 +26,23 @@
         --color-platinum: #f0f0f0;
         --color-violet: #6a00d5;
         --color-lavender: #f4efff;
-        --color-text-secondary: #6b6b6b;
+        --color-text-secondary: rgba(11, 4, 37, 0.6);
+        --color-border: rgba(11, 4, 37, 0.08);
 
         --radius-sm: 4px;
         --radius-md: 8px;
         --radius-lg: 16px;
         --radius-xl: 24px;
+        --radius-xxl: 32px;
+        --radius-card: 2.75rem;
+        --radius-container: 3rem;
+        --radius-hero: 100px;
         --radius-full: 9999px;
 
         --shadow-sm: 0 1px 2px rgba(11, 4, 37, 0.05);
         --shadow-md: 0 4px 12px rgba(11, 4, 37, 0.08);
         --shadow-lg: 0 8px 24px rgba(11, 4, 37, 0.12);
+        --shadow-xl: 0 16px 48px rgba(11, 4, 37, 0.16);
 
         --duration-normal: 200ms;
         --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,7 +80,7 @@
           #240046 50%,
           #6a00d5 100%
         );
-        border-radius: 100px;
+        border-radius: var(--radius-hero);
         padding: 72px 48px;
         overflow: hidden;
         min-height: 340px;
@@ -121,6 +127,37 @@
         font-weight: 400;
         color: rgba(251, 251, 251, 0.7);
         line-height: 1.6;
+        margin-bottom: 32px;
+      }
+
+      .dp-hero-btn {
+        display: inline-block;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--color-midnight);
+        background-color: var(--color-pearl);
+        padding: 16px 40px;
+        border-radius: var(--radius-full);
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform var(--duration-normal) var(--ease-default),
+          box-shadow var(--duration-normal) var(--ease-default);
+      }
+
+      .dp-hero-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 10px -4px rgba(106, 0, 213, 0.5);
+      }
+
+      .dp-hero-btn:active {
+        transform: translateY(0);
+      }
+
+      .dp-hero-btn:focus-visible {
+        outline: 2px solid var(--color-violet);
+        outline-offset: 2px;
       }
 
       /* ── Featured Partners ── */
@@ -152,19 +189,19 @@
       }
 
       .dp-featured-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
         box-shadow: var(--shadow-lg);
       }
 
-      .dp-featured-card img {
-        max-height: 4rem;
+      .dp-featured-card-logo {
+        height: 32px;
         width: auto;
         object-fit: contain;
         margin-bottom: 24px;
       }
 
       .dp-featured-card h3 {
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 500;
         color: var(--color-midnight);
         margin-bottom: 12px;
@@ -185,11 +222,11 @@
         gap: 8px;
         font-family: "DM Sans", sans-serif;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 400;
         color: var(--color-midnight);
         background-color: var(--color-platinum);
         padding: 12px 24px;
-        border-radius: 100px;
+        border-radius: var(--radius-full);
         text-decoration: none;
         transition: all var(--duration-normal) var(--ease-default);
         align-self: flex-start;
@@ -231,7 +268,7 @@
       }
 
       .dp-partner-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
         box-shadow: var(--shadow-lg);
       }
 
@@ -248,8 +285,8 @@
         color: var(--color-midnight);
       }
 
-      .dp-partner-card img {
-        max-height: 3rem;
+      .dp-partner-logo-img {
+        height: 32px;
         width: auto;
         object-fit: contain;
       }
@@ -263,7 +300,7 @@
 
       .dp-cta-inner {
         background-color: var(--color-midnight);
-        border-radius: 100px;
+        border-radius: var(--radius-hero);
         padding: 72px 48px;
         text-align: center;
       }
@@ -287,12 +324,12 @@
       .dp-btn {
         display: inline-block;
         font-family: "DM Sans", sans-serif;
-        font-size: 17px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 400;
         color: var(--color-midnight);
         background-color: var(--color-pearl);
         padding: 16px 40px;
-        border-radius: 100px;
+        border-radius: var(--radius-full);
         border: none;
         cursor: pointer;
         text-decoration: none;
@@ -361,6 +398,7 @@
               We work with industry leaders to deliver integrated solutions that
               power your business.
             </p>
+            <a href="/partners" class="dp-hero-btn">Explore partnerships</a>
           </div>
         </div>
       </section>
@@ -375,7 +413,7 @@
               <img
                 src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/691725b3c8fa665402556d14_finago_logo_normal_black.png"
                 alt="Finago"
-                style="height: 32px; width: auto"
+                class="dp-featured-card-logo"
               />
               <h3>Finago</h3>
               <p>
@@ -410,7 +448,7 @@
               <img
                 src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694022744e53777b5d941176_LHL-logo.svg"
                 alt="Nordiska"
-                style="height: 32px; width: auto"
+                class="dp-featured-card-logo"
               />
               <h3>Nordiska</h3>
               <p>
@@ -458,7 +496,7 @@
                 <img
                   src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694022744e53777b5d941176_LHL-logo.svg"
                   alt="Mynt"
-                  style="height: 32px; width: auto"
+                  class="dp-partner-logo-img"
                 />
                 <span>Mynt</span>
               </div>
