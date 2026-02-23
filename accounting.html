@@ -95,6 +95,7 @@
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #0b0425;
       }
       body {
         font-family: "DM Sans", sans-serif;
@@ -197,15 +198,16 @@
         padding: 10px 24px;
         font-size: var(--text-body-small);
       }
-      .btn--violet {
-        background-color: var(--color-violet);
-        color: var(--color-pearl);
+      .btn--outline {
+        background: transparent;
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border);
       }
-      .btn--violet:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(106, 0, 213, 0.4);
+      .btn--outline:hover {
+        border-color: var(--color-text-primary);
+        background: rgba(11, 4, 37, 0.03);
       }
-      .btn--violet:active {
+      .btn--outline:active {
         transform: translateY(0);
       }
 
@@ -324,6 +326,79 @@
       }
       .header__hamburger.is-open .header__hamburger-icon--close {
         display: block;
+      }
+
+      /* Services dropdown */
+      .header__dropdown-wrap {
+        position: relative;
+      }
+      .header__dropdown {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        background: rgba(11, 4, 37, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(251, 251, 251, 0.08);
+        border-radius: var(--radius-lg);
+        padding: 6px;
+        min-width: 210px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s 0.12s var(--ease-default),
+          visibility 0.2s 0.12s var(--ease-default),
+          transform 0.2s 0.12s var(--ease-default);
+        pointer-events: none;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+      }
+      .header__dropdown::before {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: -8px;
+        right: -8px;
+        height: 16px;
+      }
+      .header__dropdown-wrap:hover .header__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+        transition-delay: 0s;
+      }
+      .header__dropdown-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: var(--radius-md);
+        font-size: var(--text-body-small);
+        font-weight: 400;
+        color: rgba(251, 251, 251, 0.75);
+        transition: background var(--duration-fast), color var(--duration-fast);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .header__dropdown-item:hover {
+        background: rgba(251, 251, 251, 0.06);
+        color: var(--color-pearl);
+      }
+      .header__dropdown-item--disabled {
+        color: rgba(251, 251, 251, 0.25);
+        cursor: default;
+        pointer-events: none;
+      }
+      .header__dropdown-badge {
+        font-size: 10px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: var(--radius-full);
+        background: rgba(106, 0, 213, 0.15);
+        color: rgba(139, 92, 246, 0.7);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       /* ========================================
@@ -773,7 +848,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: var(--space-4);
-        align-items: start;
+        align-items: stretch;
       }
       .package-card {
         background: var(--color-pearl);
@@ -861,6 +936,7 @@
       }
       .package-card__cta {
         width: 100%;
+        margin-top: auto;
       }
 
       /* ========================================
@@ -887,25 +963,36 @@
         background: var(--color-pearl);
         border-radius: var(--radius-xl);
         padding: var(--space-5);
-        box-shadow: var(--shadow-md);
+        border: 1px solid var(--color-border);
         transition: box-shadow var(--duration-normal) var(--ease-default),
-          transform var(--duration-normal) var(--ease-default);
+          transform var(--duration-normal) var(--ease-default),
+          border-color var(--duration-normal) var(--ease-default);
       }
       .service-card:hover {
         box-shadow: var(--shadow-lg);
-        transform: translateY(-2px);
+        transform: translateY(-4px);
+        border-color: rgba(106, 0, 213, 0.15);
+      }
+      .service-card__icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, var(--color-lavender) 0%, rgba(106, 0, 213, 0.08) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-4);
       }
       .service-card__icon {
-        width: 36px;
-        height: 36px;
+        width: 24px;
+        height: 24px;
         color: var(--color-violet);
-        margin-bottom: var(--space-3);
         stroke: currentColor;
         stroke-width: 1.5;
         fill: none;
       }
       .service-card__title {
-        font-size: var(--text-h2);
+        font-size: var(--text-h3);
         font-weight: 500;
         color: var(--color-text-primary);
         margin-bottom: var(--space-2);
@@ -923,12 +1010,14 @@
         gap: var(--space-2);
       }
       .tag {
-        font-size: var(--text-body-small);
-        padding: 6px 16px;
+        font-size: var(--text-caption);
+        font-weight: 500;
+        padding: 5px 14px;
         border-radius: var(--radius-full);
-        background: var(--color-platinum);
-        color: var(--color-text-primary);
+        background: var(--color-lavender);
+        color: var(--color-violet);
         white-space: nowrap;
+        letter-spacing: 0.01em;
       }
 
       /* ========================================
@@ -1360,6 +1449,34 @@
           margin-left: 0;
           margin-top: var(--space-2);
         }
+        /* Mobile dropdown: show inline */
+        .header__dropdown-wrap {
+          position: static;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .header__dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          pointer-events: auto;
+          background: transparent;
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
+          border: none;
+          box-shadow: none;
+          padding: 4px 0 0 16px;
+          min-width: auto;
+        }
+        .header__dropdown::before {
+          display: none;
+        }
+        .header__dropdown-item {
+          padding: 8px 12px;
+          font-size: 15px;
+        }
         .value-props__grid {
           grid-template-columns: 1fr;
         }
@@ -1508,13 +1625,22 @@
             </svg>
           </button>
           <div class="header__nav-links">
-            <a href="/" class="header__link">Home</a>
+            <div class="header__dropdown-wrap">
+              <span class="header__link">Services</span>
+              <div class="header__dropdown">
+                <a href="/accounting" class="header__dropdown-item">Accounting</a>
+                <span class="header__dropdown-item header__dropdown-item--disabled">CRM <span class="header__dropdown-badge">Soon</span></span>
+                <span class="header__dropdown-item header__dropdown-item--disabled">Marketing <span class="header__dropdown-badge">Soon</span></span>
+                <span class="header__dropdown-item header__dropdown-item--disabled">MRP <span class="header__dropdown-badge">Soon</span></span>
+                <span class="header__dropdown-item header__dropdown-item--disabled">HR <span class="header__dropdown-badge">Soon</span></span>
+              </div>
+            </div>
             <a href="/about" class="header__link">About</a>
-            <a href="/accounting" class="header__link is-active">Accounting</a>
+            <a href="/contact" class="header__link">Contact</a>
             <a href="/investor-relations" class="header__link"
               >Investor Relations</a
             >
-            <a href="/get-started" class="btn btn--sm header__cta"
+            <a href="/contact" class="btn btn--sm header__cta"
               >Get started &rarr;</a
             >
           </div>
@@ -1537,7 +1663,7 @@
           single invoice.
         </p>
         <div class="hero__cta fade-up fade-up-d3">
-          <a href="/get-started" class="btn btn--white">Get started &rarr;</a>
+          <a href="/contact" class="btn btn--white">Get started &rarr;</a>
           <a href="#packages" class="btn btn--outline-light">See packages</a>
         </div>
       </div>
@@ -2007,7 +2133,7 @@
                 <span>Reconciliation</span>
               </div>
             </div>
-            <a href="/get-started" class="btn btn--primary btn--sm package-card__cta"
+            <a href="/contact" class="btn btn--outline package-card__cta"
               >Get started</a
             >
           </div>
@@ -2096,7 +2222,7 @@
                 <span>Tax return filing</span>
               </div>
             </div>
-            <a href="/get-started" class="btn btn--violet btn--sm package-card__cta"
+            <a href="/contact" class="btn btn--primary package-card__cta"
               >Get started</a
             >
           </div>
@@ -2184,7 +2310,7 @@
                 <span>Full compliance ownership</span>
               </div>
             </div>
-            <a href="/get-started" class="btn btn--primary btn--sm package-card__cta"
+            <a href="/contact" class="btn btn--outline package-card__cta"
               >Get started</a
             >
           </div>
@@ -2271,7 +2397,7 @@
                 <span>SLA &amp; onboarding</span>
               </div>
             </div>
-            <a href="/contact" class="btn btn--primary btn--sm package-card__cta"
+            <a href="/contact" class="btn btn--outline package-card__cta"
               >Contact us</a
             >
           </div>
@@ -2330,15 +2456,17 @@
 
         <div class="services__grid">
           <div class="service-card reveal">
-            <svg
-              class="service-card__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
-              />
-            </svg>
+            <div class="service-card__icon-wrap">
+              <svg
+                class="service-card__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+                />
+              </svg>
+            </div>
             <h3 class="service-card__title">Bookkeeping</h3>
             <p class="service-card__desc">
               Your books, handled. Accurate, compliant, always current.
@@ -2353,16 +2481,18 @@
           </div>
 
           <div class="service-card reveal reveal-d1">
-            <svg
-              class="service-card__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+            <div class="service-card__icon-wrap">
+              <svg
+                class="service-card__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
             <h3 class="service-card__title">Payroll</h3>
             <p class="service-card__desc">
               Payslips, tax deductions, employer contributions, holiday pay
@@ -2376,19 +2506,21 @@
           </div>
 
           <div class="service-card reveal reveal-d2">
-            <svg
-              class="service-card__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"
-              />
-              <path d="M14 2v6h6" />
-              <path d="M16 13H8" />
-              <path d="M16 17H8" />
-              <path d="M10 9H8" />
-            </svg>
+            <div class="service-card__icon-wrap">
+              <svg
+                class="service-card__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"
+                />
+                <path d="M14 2v6h6" />
+                <path d="M16 13H8" />
+                <path d="M16 17H8" />
+                <path d="M10 9H8" />
+              </svg>
+            </div>
             <h3 class="service-card__title">Invoicing</h3>
             <p class="service-card__desc">
               Invoice directly from the accounting system. Payments post
@@ -2402,15 +2534,17 @@
           </div>
 
           <div class="service-card reveal reveal-d3">
-            <svg
-              class="service-card__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              />
-            </svg>
+            <div class="service-card__icon-wrap">
+              <svg
+                class="service-card__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+            </div>
             <h3 class="service-card__title">Advisory</h3>
             <p class="service-card__desc">
               VAT, tax, business structure &mdash; we advise. When you need a
@@ -2507,7 +2641,7 @@
               your business &mdash; we'll find the right package.
             </p>
             <div class="cta__actions">
-              <a href="/get-started" class="btn btn--white"
+              <a href="/contact" class="btn btn--white"
                 >Get started &rarr;</a
               >
               <a href="/contact" class="btn btn--outline-light"
@@ -2700,9 +2834,8 @@
             <h4 class="footer__col-title">Company</h4>
             <div class="footer__links">
               <a href="/about" class="footer__link">About</a>
-              <a href="#" class="footer__link">Careers</a>
               <a href="/contact" class="footer__link">Contact</a>
-              <a href="#" class="footer__link">Press</a>
+              <a href="/investor-relations" class="footer__link">Investor Relations</a>
             </div>
           </div>
           <div>
