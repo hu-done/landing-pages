@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/fav-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/logo-touch-icon.png" />
+    <meta name="theme-color" content="#FBFBFB" />
     <title>Done.ai | One system for everything your business needs</title>
     <meta
       name="description"
@@ -4512,6 +4515,32 @@
             startProofCarousel();
           }
         }
+      })();
+    </script>
+    <script>
+      (function () {
+        var d =
+          "https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/692cf5ee062c7d8fc6cad998_fav-icon_light.png";
+        var m = window.matchMedia("(prefers-color-scheme: dark)");
+        var o = document.querySelector(
+          "link[rel='icon'], link[rel='shortcut icon']"
+        );
+        var l = o ? o.href : "";
+        function u() {
+          var h = m.matches ? d : l;
+          document
+            .querySelectorAll("link[rel='icon'], link[rel='shortcut icon']")
+            .forEach(function (e) {
+              e.remove();
+            });
+          var n = document.createElement("link");
+          n.rel = "icon";
+          n.type = "image/png";
+          n.href = h;
+          document.head.appendChild(n);
+        }
+        m.addEventListener("change", u);
+        if (m.matches) u();
       })();
     </script>
   </body>
