@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Done.ai — About Us</title>
+    <meta
+      name="description"
+      content="Learn about Done.ai — one intelligent platform built from specialist companies across accounting, payments, marketing, and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ========================================
+         Brand Tokens
+         ======================================== */
+      :root {
+        --color-pearl: #fbfbfb;
+        --color-midnight: #0b0425;
+        --color-platinum: #f0f0f0;
+        --color-violet: #6a00d5;
+        --color-lavender: #f4efff;
+        --color-success: #006a4e;
+        --color-warning: #b45309;
+        --color-error: #de350b;
+
+        --color-surface-primary: #fbfbfb;
+        --color-surface-secondary: #1a1435;
+        --color-surface-elevated: #251a40;
+        --color-border: rgba(11, 4, 37, 0.08);
+        --color-text-primary: #0b0425;
+        --color-text-secondary: rgba(11, 4, 37, 0.6);
+        --color-accent: #6a00d5;
+
+        --color-button-primary-bg: #0b0425;
+        --color-button-primary-text: #fbfbfb;
+
+        --text-hero: 40px;
+        --text-h1: 32px;
+        --text-h2: 24px;
+        --text-h3: 20px;
+        --text-body: 16px;
+        --text-body-small: 14px;
+        --text-caption: 12px;
+
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 16px;
+        --space-4: 24px;
+        --space-5: 40px;
+        --space-6: 56px;
+        --space-7: 72px;
+        --space-8: 96px;
+        --space-9: 120px;
+        --space-10: 160px;
+        --section-gap: 80px;
+
+        --radius-sm: 4px;
+        --radius-md: 8px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-xxl: 32px;
+        --radius-card: 2.75rem;
+        --radius-container: 3rem;
+        --radius-hero: 100px;
+        --radius-full: 9999px;
+
+        --shadow-sm: 0 1px 2px rgba(11, 4, 37, 0.05);
+        --shadow-md: 0 4px 12px rgba(11, 4, 37, 0.08);
+        --shadow-lg: 0 8px 24px rgba(11, 4, 37, 0.12);
+        --shadow-xl: 0 16px 48px rgba(11, 4, 37, 0.16);
+
+        --duration-fast: 100ms;
+        --duration-normal: 200ms;
+        --duration-slow: 300ms;
+        --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-in: cubic-bezier(0.4, 0, 1, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      /* ========================================
+         Reset
+         ======================================== */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: var(--text-body);
+        line-height: 1.5;
+        color: var(--color-text-primary);
+        background-color: var(--color-pearl);
+        overflow-x: hidden;
+      }
+
+      /* Grain texture overlay */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.015;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ========================================
+         Layout
+         ======================================== */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+
+      /* ========================================
+         Buttons
+         ======================================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "DM Sans", sans-serif;
+        font-size: var(--text-body);
+        font-weight: 400;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        transition: transform var(--duration-fast) var(--ease-default),
+          box-shadow var(--duration-fast) var(--ease-default),
+          background var(--duration-fast) var(--ease-default),
+          border-color var(--duration-fast) var(--ease-default);
+        padding: 16px 40px;
+        line-height: 1;
+      }
+      .btn--primary {
+        background-color: var(--color-button-primary-bg);
+        color: var(--color-button-primary-text);
+      }
+      .btn--primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 10px -4px rgba(106, 0, 213, 0.5);
+      }
+      .btn--primary:active {
+        transform: translateY(0);
+      }
+      .btn--primary:focus-visible {
+        outline: 2px solid var(--color-violet);
+        outline-offset: 2px;
+      }
+      .btn--white {
+        background-color: var(--color-pearl);
+        color: var(--color-midnight);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .btn--white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(251, 251, 251, 0.25);
+      }
+      .btn--white:active {
+        transform: translateY(0);
+      }
+      .btn--outline-light {
+        background: transparent;
+        color: var(--color-pearl);
+        border: 1px solid rgba(251, 251, 251, 0.35);
+      }
+      .btn--outline-light:hover {
+        background: rgba(251, 251, 251, 0.08);
+        border-color: rgba(251, 251, 251, 0.6);
+      }
+      .btn--sm {
+        padding: 10px 24px;
+        font-size: var(--text-body-small);
+      }
+
+      /* ========================================
+         Section labels
+         ======================================== */
+      .label {
+        font-size: var(--text-caption);
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: var(--space-3);
+        display: block;
+      }
+      .label--violet {
+        color: var(--color-violet);
+      }
+      .label--violet-light {
+        color: #8b5cf6;
+      }
+      .label--muted {
+        color: rgba(251, 251, 251, 0.4);
+      }
+
+      /* ========================================
+         Link arrow (matches IR page)
+         ======================================== */
+      .link-arrow {
+        font-size: var(--text-body-small);
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap var(--duration-normal) var(--ease-default),
+          color var(--duration-fast);
+      }
+      .link-arrow:hover {
+        gap: 10px;
+      }
+      .link-arrow::after {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        background-color: currentColor;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
+      .link-arrow--light {
+        color: rgba(251, 251, 251, 0.5);
+      }
+      .link-arrow--light:hover {
+        color: var(--color-pearl);
+      }
+
+      /* ========================================
+         Header (sticky, matches homepage)
+         ======================================== */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s var(--ease-default),
+          box-shadow 0.3s var(--ease-default);
+      }
+      .header.scrolled {
+        background-color: rgba(11, 4, 37, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 1px 0 rgba(251, 251, 251, 0.06);
+      }
+      .header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+      }
+      .header__logo {
+        display: flex;
+        align-items: center;
+        color: var(--color-pearl);
+      }
+      .header__logo svg {
+        height: 28px;
+        width: auto;
+      }
+      .header__nav {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+      }
+      .header__nav-links {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+      }
+      .header__link {
+        font-size: var(--text-body-small);
+        font-weight: 400;
+        color: rgba(251, 251, 251, 0.75);
+        transition: color var(--duration-fast);
+      }
+      .header__link:hover {
+        color: var(--color-pearl);
+      }
+      .header__link.is-active {
+        color: var(--color-pearl);
+        font-weight: 500;
+      }
+      .header__cta {
+        margin-left: var(--space-3);
+        background: rgba(251, 251, 251, 0.1);
+        border: 1px solid rgba(251, 251, 251, 0.25);
+        color: var(--color-pearl);
+      }
+      .header__cta:hover {
+        background: rgba(251, 251, 251, 0.15);
+        border-color: rgba(251, 251, 251, 0.4);
+        transform: none;
+        box-shadow: none;
+      }
+      .header__hamburger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-pearl);
+        z-index: 101;
+        padding: 0;
+      }
+      .header__hamburger-icon--close {
+        display: none;
+      }
+      .header__hamburger.is-open .header__hamburger-icon--menu {
+        display: none;
+      }
+      .header__hamburger.is-open .header__hamburger-icon--close {
+        display: block;
+      }
+
+      /* ========================================
+         Animations
+         ======================================== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.7s var(--ease-out) both;
+      }
+      .fade-up-d1 {
+        animation-delay: 0.1s;
+      }
+      .fade-up-d2 {
+        animation-delay: 0.2s;
+      }
+      .fade-up-d3 {
+        animation-delay: 0.35s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+      }
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-d1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-d2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-d3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-d4 {
+        transition-delay: 0.4s;
+      }
+
+      /* Decoration animations */
+      @keyframes orbit {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      /* Asymmetric breathe — fast inhale, slow exhale */
+      @keyframes breathe {
+        0% {
+          opacity: 0.35;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        35% {
+          opacity: 0.85;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+        100% {
+          opacity: 0.35;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+      /* Converge — multi-step with a pause near center */
+      @keyframes converge {
+        0% {
+          transform: translate(var(--cx), var(--cy));
+          opacity: 0.5;
+        }
+        40% {
+          transform: translate(calc(var(--cx) * 0.1), calc(var(--cy) * 0.1));
+          opacity: 1;
+        }
+        55% {
+          transform: translate(calc(var(--cx) * 0.08), calc(var(--cy) * 0.08));
+          opacity: 0.9;
+        }
+        100% {
+          transform: translate(var(--cx), var(--cy));
+          opacity: 0.5;
+        }
+      }
+
+      /* =============================
+      ===========
+         1. HERO (matches IR page structure)
+         ======================================== */
+      .hero {
+        background: linear-gradient(
+          170deg,
+          #0b0425 0%,
+          #1a0e3a 40%,
+          #0b0425 75%,
+          #0e0830 100%
+        );
+        color: var(--color-pearl);
+        padding: calc(var(--space-10) + 64px) 0 var(--space-9);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 50% 20%,
+            rgba(106, 0, 213, 0.12) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 50% 90%,
+            rgba(106, 0, 213, 0.08) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(251, 251, 251, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero__inner {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero__title {
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        margin-bottom: var(--space-4);
+      }
+      .hero__sub {
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba(251, 251, 251, 0.65);
+        max-width: 520px;
+        line-height: 1.7;
+        margin-bottom: var(--space-5);
+      }
+
+      /* ========================================
+         2. STORY BLOCKS (light section)
+         ======================================== */
+      .story {
+        background: var(--color-pearl);
+        padding: var(--space-9) 0;
+      }
+      .story__block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-7);
+        align-items: center;
+        margin-bottom: var(--section-gap);
+      }
+      .story__block:last-child {
+        margin-bottom: 0;
+      }
+      .story__block--reverse {
+        direction: rtl;
+      }
+      .story__block--reverse > * {
+        direction: ltr;
+      }
+      .story__heading {
+        font-size: var(--text-h1);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--space-4);
+        color: var(--color-text-primary);
+      }
+      .story__body {
+        font-size: var(--text-body);
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+      }
+
+      /* Decorative elements — shared */
+      .story__decoration {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: var(--radius-xxl);
+        overflow: hidden;
+        background: linear-gradient(
+          170deg,
+          #0b0425 0%,
+          #1a0e3a 40%,
+          #0b0425 75%,
+          #0e0830 100%
+        );
+        box-shadow: 0 8px 32px rgba(11, 4, 37, 0.25);
+      }
+      /* Dot grid overlay */
+      .story__decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(251, 251, 251, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      /* Violet glow overlay — per-block color via modifier */
+      .story__decoration::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .story__decoration--orbit::after {
+        background: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(106, 0, 213, 0.12) 0%,
+          transparent 60%
+        );
+      }
+      .story__decoration--network::after {
+        background: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(106, 0, 213, 0.1) 0%,
+          transparent 55%
+        );
+      }
+      .story__decoration--converge::after {
+        background: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(106, 0, 213, 0.14) 0%,
+          transparent 60%
+        );
+      }
+      .story__el {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* ---- Block 1: Orbital system ---- */
+      .story__core-glow {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(167, 139, 250, 0.5) 0%,
+          rgba(139, 92, 246, 0.2) 45%,
+          transparent 70%
+        );
+        animation: breathe 8s ease-in-out infinite;
+        filter: blur(5px);
+      }
+      .story__ring {
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        will-change: transform;
+      }
+      /* Outer ring — slow and stately */
+      .story__ring--1 {
+        width: 300px;
+        height: 300px;
+        border: 1px dashed rgba(139, 92, 246, 0.15);
+        animation: orbit 55s linear infinite;
+      }
+      /* Middle ring — counter-rotation, different pace */
+      .story__ring--2 {
+        width: 210px;
+        height: 210px;
+        border: 1px dotted rgba(139, 92, 246, 0.18);
+        animation: orbit 33s linear infinite reverse;
+      }
+      /* Inner ring — fastest, creates visible relative motion */
+      .story__ring--3 {
+        width: 130px;
+        height: 130px;
+        border: 1px dashed rgba(139, 92, 246, 0.22);
+        animation: orbit 21s linear infinite;
+      }
+      .story__ring-dot {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(167, 139, 250, 0.7);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.5),
+          0 0 20px rgba(106, 0, 213, 0.2);
+        filter: blur(1px);
+      }
+      .story__ring-dot--dim {
+        width: 4px;
+        height: 4px;
+        opacity: 0.5;
+        box-shadow: 0 0 6px rgba(139, 92, 246, 0.3);
+      }
+
+      /* ---- Block 2: Network grid ---- */
+      .story__grid-bg {
+        width: 260px;
+        height: 260px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(
+            rgba(139, 92, 246, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
+        background-size: 32px 32px;
+        border-radius: var(--radius-xl);
+      }
+      .story__network-svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+      /* Center node overlay — soft glow (same as Block 1 & 3 centers) */
+      .story__node--center {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(167, 139, 250, 0.5) 0%,
+          rgba(139, 92, 246, 0.2) 45%,
+          transparent 70%
+        );
+        animation: breathe 8s ease-in-out infinite;
+        filter: blur(5px);
+        z-index: 2;
+      }
+
+      /* ---- Block 3: Convergence ---- */
+      .story__converge-orb {
+        border-radius: 50%;
+        filter: blur(4px);
+        box-shadow: 0 0 12px rgba(106, 0, 213, 0.25);
+        animation: converge var(--dur) ease-in-out infinite;
+        animation-delay: var(--delay, 0s);
+        will-change: transform;
+      }
+      .story__outer-ring {
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        border: 1.5px dashed rgba(139, 92, 246, 0.15);
+        animation: orbit 60s linear infinite;
+        will-change: transform;
+      }
+      /* Center glow — same as Block 1 & 2 centers */
+      .story__center-dot {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(167, 139, 250, 0.5) 0%,
+          rgba(139, 92, 246, 0.2) 45%,
+          transparent 70%
+        );
+        animation: breathe 8s ease-in-out infinite;
+        filter: blur(5px);
+      }
+
+      /* ========================================
+         3. COMPANIES (dark section)
+         ======================================== */
+      .companies {
+        background: linear-gradient(
+          160deg,
+          #0b0425 0%,
+          #120930 50%,
+          #0b0425 100%
+        );
+        padding: var(--space-9) 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .companies::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 30% 30%,
+            rgba(106, 0, 213, 0.08) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 70% 70%,
+            rgba(106, 0, 213, 0.06) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+      .companies::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(251, 251, 251, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .companies .container {
+        position: relative;
+        z-index: 1;
+      }
+      .companies__heading {
+        font-size: var(--text-h1);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: var(--color-pearl);
+        margin-bottom: var(--space-6);
+      }
+      .companies__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4);
+      }
+      .company-card {
+        background: var(--color-surface-secondary);
+        border-radius: var(--radius-xl);
+        padding: var(--space-5);
+        border: 1px solid rgba(251, 251, 251, 0.05);
+        transition: box-shadow var(--duration-normal) var(--ease-default),
+          transform var(--duration-normal) var(--ease-default),
+          border-color var(--duration-normal) var(--ease-default);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .company-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        transform: translateY(-4px);
+        border-color: rgba(251, 251, 251, 0.12);
+      }
+      .company-card__logo {
+        height: 24px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        object-position: left;
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+      }
+      .company-card__desc {
+        font-size: var(--text-body-small);
+        color: rgba(251, 251, 251, 0.6);
+        line-height: 1.5;
+      }
+      .company-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+      .company-card__tag {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: rgba(251, 251, 251, 0.5);
+        padding: 4px 12px;
+        border-radius: var(--radius-full);
+        border: 1px solid rgba(251, 251, 251, 0.08);
+        background: rgba(251, 251, 251, 0.04);
+      }
+      .company-card__link {
+        margin-top: auto;
+        padding-top: var(--space-2);
+      }
+
+      /* ========================================
+         4. LEADERSHIP (light section)
+         ======================================== */
+      .leadership {
+        background: var(--color-pearl);
+        padding: var(--space-9) 0;
+      }
+      .leadership__heading {
+        font-size: var(--text-h1);
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: var(--color-text-primary);
+        margin-bottom: var(--space-6);
+      }
+      .leadership__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+      }
+      .leader-card {
+        background: var(--color-pearl);
+        border-radius: var(--radius-xl);
+        padding: var(--space-5);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
+        transition: box-shadow var(--duration-normal) var(--ease-default),
+          transform var(--duration-normal) var(--ease-default);
+      }
+      .leader-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .leader-card__header {
+        text-align: center;
+        margin-bottom: var(--space-4);
+      }
+      .leader-card__photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto var(--space-3);
+        box-shadow: var(--shadow-sm);
+        border: 3px solid var(--color-pearl);
+      }
+      .leader-card__name {
+        font-size: var(--text-h3);
+        font-weight: 500;
+        color: var(--color-text-primary);
+        margin-bottom: var(--space-1);
+      }
+      .leader-card__title {
+        font-size: var(--text-body-small);
+        color: var(--color-text-secondary);
+      }
+      .leader-card__bio {
+        font-size: var(--text-body-small);
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+        border-top: 1px solid var(--color-border);
+        padding-top: var(--space-4);
+      }
+
+      /* ========================================
+         5. CLOSING (quote + CTA as inset card)
+         ======================================== */
+      .closing {
+        background: var(--color-pearl);
+        padding: 0 0 var(--space-9);
+      }
+      .closing__card {
+        background: linear-gradient(
+          160deg,
+          #0b0425 0%,
+          #120930 50%,
+          #0b0425 100%
+        );
+        border-radius: var(--radius-xxl);
+        padding: var(--space-8) var(--space-7);
+        color: var(--color-pearl);
+        position: relative;
+        overflow: hidden;
+      }
+      .closing__card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 50% 20%,
+            rgba(106, 0, 213, 0.12) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(106, 0, 213, 0.08) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+      .closing__card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(251, 251, 251, 0.04) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .closing__content {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Quote inside closing card */
+      .closing__quote {
+        max-width: 760px;
+        margin: 0 auto var(--space-7);
+        text-align: center;
+      }
+      .closing__quote-mark {
+        font-size: 48px;
+        line-height: 1;
+        color: rgba(139, 92, 246, 0.3);
+        margin-bottom: var(--space-2);
+      }
+      .closing__quote-text {
+        font-size: var(--text-h2);
+        font-weight: 400;
+        line-height: 1.6;
+        color: rgba(251, 251, 251, 0.85);
+        font-style: italic;
+      }
+      .closing__quote-attr {
+        font-size: var(--text-body-small);
+        color: rgba(251, 251, 251, 0.4);
+        margin-top: var(--space-4);
+      }
+
+      /* Divider */
+      .closing__divider {
+        border: none;
+        border-top: 1px solid rgba(251, 251, 251, 0.06);
+        margin: 0 auto var(--space-7);
+        max-width: 200px;
+      }
+
+      /* CTA inside closing card */
+      .closing__cta {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+      }
+      .closing__cta-title {
+        font-size: var(--text-h1);
+        font-weight: 500;
+        line-height: 1.25;
+      }
+      .closing__cta-body {
+        font-size: var(--text-body);
+        color: rgba(251, 251, 251, 0.65);
+        max-width: 480px;
+        line-height: 1.7;
+      }
+      .closing__cta-actions {
+        display: flex;
+        gap: var(--space-3);
+        margin-top: var(--space-2);
+      }
+
+      /* ========================================
+         6. FOOTER (matches homepage exactly)
+         ======================================== */
+      .footer {
+        background: linear-gradient(
+          170deg,
+          #0b0425 0%,
+          #1a0e3a 40%,
+          #0b0425 75%,
+          #0e0830 100%
+        );
+        color: var(--color-pearl);
+        padding: var(--space-7) 0 var(--space-5);
+        position: relative;
+        overflow: hidden;
+      }
+      .footer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 50% 0%,
+            rgba(106, 0, 213, 0.1) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(106, 0, 213, 0.06) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+      .footer::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(251, 251, 251, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .footer > .container {
+        position: relative;
+        z-index: 1;
+      }
+      .footer__inner {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+        gap: var(--space-5);
+      }
+      .footer__brand {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .footer__logo {
+        color: var(--color-pearl);
+      }
+      .footer__logo svg {
+        height: 32px;
+        width: auto;
+      }
+      .footer__col-title {
+        font-size: var(--text-body-small);
+        font-weight: 500;
+        margin-bottom: var(--space-4);
+        color: rgba(251, 251, 251, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .footer__links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .footer__link {
+        font-size: var(--text-body-small);
+        color: rgba(251, 251, 251, 0.6);
+        transition: color var(--duration-fast);
+      }
+      .footer__link:hover {
+        color: var(--color-pearl);
+      }
+      .footer__company-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: var(--text-body-small);
+        color: rgba(251, 251, 251, 0.45);
+        line-height: 1.5;
+      }
+      .footer__socials {
+        display: flex;
+        gap: var(--space-3);
+        margin-top: var(--space-4);
+      }
+      .footer__social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-md);
+        color: rgba(251, 251, 251, 0.4);
+        transition: color var(--duration-fast) var(--ease-default),
+          background var(--duration-fast) var(--ease-default);
+      }
+      .footer__social-icon:hover {
+        color: var(--color-pearl);
+        background: rgba(251, 251, 251, 0.06);
+      }
+      .footer__social-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        fill: none;
+      }
+      .footer__divider {
+        border: none;
+        border-top: 1px solid rgba(251, 251, 251, 0.06);
+        margin: var(--space-6) 0 var(--space-4);
+      }
+      .footer__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(251, 251, 251, 0.35);
+        gap: var(--space-4);
+        flex-wrap: wrap;
+      }
+      .footer__legal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .footer__legal-sep {
+        margin: 0 4px;
+      }
+
+      /* ========================================
+         Responsive — Tablet
+         ======================================== */
+      @media (max-width: 1024px) {
+        .hero__title {
+          font-size: 40px;
+        }
+        .hero__sub {
+          font-size: var(--text-body);
+        }
+        .header__nav {
+          gap: var(--space-4);
+        }
+        .header__nav-links {
+          gap: var(--space-4);
+        }
+        .story__block {
+          gap: var(--space-5);
+        }
+        .companies__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .closing__card {
+          padding: var(--space-7) var(--space-5);
+        }
+        .footer__inner {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .footer__brand {
+          grid-column: 1 / -1;
+        }
+      }
+
+      /* ========================================
+         Responsive — Mobile
+         ======================================== */
+      @media (max-width: 768px) {
+        .hero {
+          padding: calc(var(--space-8) + 64px) 0 var(--space-7);
+        }
+        .hero__title {
+          font-size: 32px;
+        }
+
+        .header__hamburger {
+          display: flex;
+        }
+        .header__nav-links {
+          display: none;
+          position: fixed;
+          top: 64px;
+          left: 0;
+          right: 0;
+          background: rgba(11, 4, 37, 0.97);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          flex-direction: column;
+          padding: 24px;
+          gap: 20px;
+          border-bottom: 1px solid rgba(251, 251, 251, 0.06);
+        }
+        .header__nav-links.is-open {
+          display: flex;
+        }
+        .header__nav-links .header__link {
+          font-size: 16px;
+          color: rgba(251, 251, 251, 0.8);
+        }
+        .header__nav-links .header__cta {
+          margin-left: 0;
+          margin-top: var(--space-2);
+        }
+        .header__nav {
+          gap: var(--space-3);
+        }
+
+        .story__block,
+        .story__block--reverse {
+          grid-template-columns: 1fr;
+          direction: ltr;
+        }
+        .story__decoration {
+          order: -1;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+
+        .companies__grid {
+          grid-template-columns: 1fr;
+        }
+        .leadership__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .closing__card {
+          padding: var(--space-6) var(--space-4);
+          border-radius: var(--radius-xl);
+        }
+        .closing__quote-text {
+          font-size: var(--text-h3);
+        }
+        .closing__cta-actions {
+          flex-direction: column;
+          width: 100%;
+          max-width: 320px;
+        }
+        .closing__cta-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .footer__inner {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer__bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--space-2);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero__title {
+          font-size: 28px;
+        }
+        .footer__inner {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="/" class="header__logo">
+          <svg
+            viewBox="0 0 485 156"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M53.3182 44.3431C68.7584 44.3431 83.5902 50.8843 89.5229 61.6088H90.3596C89.9793 59.4031 89.7511 56.9691 89.7511 51.2646V0H111.504V152.501H91.3483V145.808C91.3483 141.168 91.5765 137.897 91.7286 135.235H91.1202C84.1987 148.47 69.5951 155.771 52.4816 155.771C21.1447 155.771 0 132.573 0 100.095C0 67.6175 21.7532 44.4192 53.2422 44.4192L53.3182 44.3431ZM90.5117 99.8671C90.5117 78.7224 76.2884 63.6624 56.3606 63.6624C36.4328 63.6624 22.2096 78.7224 22.2096 99.8671C22.2096 121.012 36.8131 136.072 56.3606 136.072C75.9081 136.072 90.5117 120.86 90.5117 99.8671Z"
+              fill="currentColor"
+            />
+            <path
+              d="M127.795 100.096C127.795 67.9986 151.374 44.4199 183.471 44.4199C215.568 44.4199 239.375 67.9986 239.375 100.096C239.375 132.193 215.568 155.772 183.471 155.772C151.374 155.772 127.795 131.965 127.795 100.096ZM217.09 99.8678C217.09 78.7231 203.247 63.6632 183.547 63.6632C163.848 63.6632 150.005 78.7231 150.005 99.8678C150.005 121.013 164 136.073 183.547 136.073C203.095 136.073 217.09 120.86 217.09 99.8678Z"
+              fill="currentColor"
+            />
+            <path
+              d="M343.063 47.2852V152.172H321.082V66.3763H277.575V152.172H255.594V47.2852H343.063Z"
+              fill="currentColor"
+            />
+            <path
+              d="M415.01 155.772C382.456 155.772 359.105 131.965 359.105 100.096C359.105 68.2267 382.456 44.4199 414.629 44.4199C446.803 44.4199 466.274 67.9986 466.274 100.096C466.274 100.096 466.046 106.029 465.666 108.006H382.076C384.89 125.272 397.288 136.073 415.238 136.073C433.188 136.073 437.6 131.433 445.13 121.849L457.908 135.084C447.563 148.927 432.884 155.848 415.01 155.848V155.772ZM382.076 92.1857H444.521C442.924 75.5286 431.135 63.7392 414.249 63.7392C397.364 63.7392 384.966 74.9201 382.152 92.1857H382.076Z"
+              fill="currentColor"
+            />
+            <path
+              d="M455.019 34.7392C455.893 33.1377 457.058 31.9729 458.368 31.0994C459.824 30.2258 461.425 29.7891 463.172 29.7891C464.919 29.7891 466.084 30.0803 467.249 30.6626C468.414 31.245 469.287 32.1185 470.015 32.9921V30.0802H474.237V50.0262H470.015V47.1144C469.287 47.9879 468.414 48.8615 467.103 49.4438C465.939 50.0262 464.483 50.3174 463.027 50.3174C461.571 50.3174 459.678 49.8806 458.368 49.007C456.912 48.1335 455.747 46.8232 455.019 45.3673C454.146 43.7658 453.709 42.0187 453.709 39.9804C453.709 37.9421 454.146 36.1951 455.019 34.5936V34.7392ZM469.287 36.6318C468.705 35.6127 467.977 34.8847 467.103 34.3024C466.23 33.72 465.211 33.5744 464.192 33.5744C463.172 33.5744 462.153 33.8656 461.28 34.3024C460.406 34.8847 459.678 35.6127 459.096 36.6318C458.514 37.651 458.222 38.8157 458.222 40.2716C458.222 41.7275 458.514 42.8922 459.096 43.9114C459.678 44.9305 460.406 45.8041 461.28 46.2408C462.153 46.8232 463.172 47.1144 464.192 47.1144C465.211 47.1144 466.23 46.8232 467.103 46.3864C467.977 45.9497 468.705 45.0761 469.287 44.057C469.87 43.0378 470.161 41.8731 470.161 40.4172C470.161 38.9613 469.87 37.7966 469.287 36.7774V36.6318Z"
+              fill="currentColor"
+            />
+            <path
+              d="M479.962 26.8785C479.526 26.4418 479.234 25.7138 479.234 24.9859C479.234 24.2579 479.526 23.6756 479.962 23.0932C480.399 22.6564 481.127 22.3652 481.855 22.3652C482.583 22.3652 483.165 22.6564 483.748 23.0932C484.184 23.53 484.476 24.2579 484.476 24.9859C484.476 25.7138 484.184 26.2962 483.748 26.8785C483.311 27.3153 482.583 27.6065 481.855 27.6065C481.127 27.6065 480.545 27.3153 479.962 26.8785ZM483.893 30.2271V50.1731H479.817V30.2271H483.893Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+        <nav class="header__nav">
+          <button
+            class="header__hamburger"
+            id="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="header__hamburger-icon header__hamburger-icon--menu"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <svg
+              class="header__hamburger-icon header__hamburger-icon--close"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+          <div class="header__nav-links">
+            <a href="#" class="header__link">Services</a>
+            <a href="/about" class="header__link is-active">About</a>
+            <a href="/contact" class="header__link">Contact</a>
+            <a href="/investor-relations" class="header__link"
+              >Investor Relations</a
+            >
+            <a href="/get-started" class="btn btn--sm header__cta"
+              >Get started &rarr;</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         1. HERO
+         ========================================== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title fade-up fade-up-d1">
+          One platform. Built from the&nbsp;best.
+        </h1>
+        <p class="hero__sub fade-up fade-up-d2">
+          Done.ai brings together specialist companies into one AI-native
+          platform for CRM, accounting, payments, and financial services.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         2. STORY BLOCKS (light)
+         ========================================== -->
+    <section class="story">
+      <div class="container">
+        <!-- Block 1: The Platform -->
+        <div class="story__block reveal">
+          <div>
+            <span class="label label--violet">The Platform</span>
+            <h2 class="story__heading">One system. Every function.</h2>
+            <p class="story__body">
+              We're integrating CRM, accounting, invoicing, payments, financial
+              services, and marketing into a single platform. Not bolted
+              together &mdash; built together. One data layer. One source of
+              truth. Every department sees the same numbers, in real time.
+            </p>
+          </div>
+          <div class="story__decoration story__decoration--orbit">
+            <!-- Core glow -->
+            <div class="story__el story__core-glow"></div>
+            <!-- Orbital rings with dots at exact cardinal points on the circle border -->
+            <div class="story__el story__ring story__ring--1">
+              <div
+                class="story__ring-dot"
+                style="top: 0; left: 50%; transform: translate(-50%, -50%)"
+              ></div>
+              <div
+                class="story__ring-dot story__ring-dot--dim"
+                style="top: 50%; right: 0; transform: translate(50%, -50%)"
+              ></div>
+            </div>
+            <div class="story__el story__ring story__ring--2">
+              <div
+                class="story__ring-dot"
+                style="bottom: 0; left: 50%; transform: translate(-50%, 50%)"
+              ></div>
+              <div
+                class="story__ring-dot story__ring-dot--dim"
+                style="top: 50%; left: 0; transform: translate(-50%, -50%)"
+              ></div>
+            </div>
+            <div class="story__el story__ring story__ring--3">
+              <div
+                class="story__ring-dot"
+                style="top: 50%; left: 0; transform: translate(-50%, -50%)"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2: The Approach (reversed) -->
+        <div class="story__block story__block--reverse reveal">
+          <div>
+            <span class="label label--violet">The Approach</span>
+            <h2 class="story__heading">Intelligence, not integration.</h2>
+            <p class="story__body">
+              Other platforms connect tools. We embed intelligence into the
+              infrastructure itself. Finance isn't an add-on &mdash; it's built
+              in. Automation isn't a feature &mdash; it's the foundation. With
+              Done.ai, you don't need to worry about what's running, or how. It
+              just works. Done.
+            </p>
+          </div>
+          <div class="story__decoration story__decoration--network">
+            <!-- Grid pattern -->
+            <div class="story__el story__grid-bg"></div>
+            <!-- Network SVG with traveling glow pulses -->
+            <svg
+              class="story__network-svg"
+              width="280"
+              height="280"
+              viewBox="0 0 280 280"
+              fill="none"
+            >
+              <defs>
+                <filter
+                  id="pulseGlow"
+                  x="-100%"
+                  y="-100%"
+                  width="300%"
+                  height="300%"
+                >
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                </filter>
+              </defs>
+              <!-- Static network lines -->
+              <line
+                x1="50"
+                y1="70"
+                x2="140"
+                y2="140"
+                stroke="rgba(139,92,246,0.12)"
+                stroke-width="1"
+              />
+              <line
+                x1="140"
+                y1="140"
+                x2="230"
+                y2="80"
+                stroke="rgba(139,92,246,0.12)"
+                stroke-width="1"
+              />
+              <line
+                x1="140"
+                y1="140"
+                x2="80"
+                y2="210"
+                stroke="rgba(139,92,246,0.10)"
+                stroke-width="1"
+              />
+              <line
+                x1="140"
+                y1="140"
+                x2="210"
+                y2="200"
+                stroke="rgba(139,92,246,0.10)"
+                stroke-width="1"
+              />
+              <line
+                x1="50"
+                y1="70"
+                x2="80"
+                y2="210"
+                stroke="rgba(139,92,246,0.06)"
+                stroke-width="0.5"
+              />
+              <line
+                x1="230"
+                y1="80"
+                x2="210"
+                y2="200"
+                stroke="rgba(139,92,246,0.06)"
+                stroke-width="0.5"
+              />
+              <!-- Traveling glow pulses — varied speeds, some bi-directional -->
+              <!-- Inward: node→center (data arriving) -->
+              <circle
+                r="5"
+                fill="rgba(167,139,250,0.7)"
+                filter="url(#pulseGlow)"
+              >
+                <animateMotion
+                  dur="2.4s"
+                  repeatCount="indefinite"
+                  path="M50,70 L140,140"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                  keyTimes="0;1"
+                />
+              </circle>
+              <!-- Outward: center→node (response) -->
+              <circle
+                r="4"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              >
+                <animateMotion
+                  dur="3.2s"
+                  repeatCount="indefinite"
+                  path="M140,140 L230,80"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                  keyTimes="0;1"
+                />
+              </circle>
+              <!-- Inward: slower, offset timing -->
+              <circle
+                r="5"
+                fill="rgba(167,139,250,0.6)"
+                filter="url(#pulseGlow)"
+              >
+                <animateMotion
+                  dur="2.8s"
+                  repeatCount="indefinite"
+                  path="M80,210 L140,140"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                  keyTimes="0;1"
+                />
+              </circle>
+              <!-- Outward: fastest -->
+              <circle
+                r="4"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              >
+                <animateMotion
+                  dur="3.6s"
+                  repeatCount="indefinite"
+                  path="M140,140 L210,200"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                  keyTimes="0;1"
+                />
+              </circle>
+              <!-- Secondary path pulse — cross-link, slowest -->
+              <circle
+                r="3"
+                fill="rgba(167,139,250,0.35)"
+                filter="url(#pulseGlow)"
+              >
+                <animateMotion
+                  dur="4.5s"
+                  repeatCount="indefinite"
+                  path="M50,70 L80,210"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.2 1"
+                  keyTimes="0;1"
+                />
+              </circle>
+              <!-- Static endpoint nodes — small glowing dots matching ring-dot style -->
+              <circle
+                cx="50"
+                cy="70"
+                r="3.5"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              />
+              <circle
+                cx="230"
+                cy="80"
+                r="3.5"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              />
+              <circle
+                cx="80"
+                cy="210"
+                r="3.5"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              />
+              <circle
+                cx="210"
+                cy="200"
+                r="3.5"
+                fill="rgba(167,139,250,0.5)"
+                filter="url(#pulseGlow)"
+              />
+            </svg>
+            <!-- Center node pulse (HTML overlay for box-shadow animation) -->
+            <div class="story__el story__node--center"></div>
+          </div>
+        </div>
+
+        <!-- Block 3: The Companies -->
+        <div class="story__block reveal">
+          <div>
+            <span class="label label--violet">The Companies</span>
+            <h2 class="story__heading">
+              Built through acquisition. Unified by design.
+            </h2>
+            <p class="story__body">
+              Done.ai has acquired specialist companies across accounting, debt
+              collection, digital marketing, HR, cloud infrastructure, and
+              manufacturing systems. Each brings deep domain expertise.
+              Together, they form the building blocks of a single, intelligent
+              platform.
+            </p>
+          </div>
+          <div class="story__decoration story__decoration--converge">
+            <!-- Framing ring -->
+            <div class="story__el story__outer-ring"></div>
+            <!-- Converging orbs — 7 orbs, wide speed variation, staggered starts -->
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 22px;
+                height: 22px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.5) 0%,
+                  rgba(106, 0, 213, 0.12) 40%,
+                  transparent 70%
+                );
+                --cx: 95px;
+                --cy: -50px;
+                --dur: 7s;
+                --delay: 0s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 14px;
+                height: 14px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.4) 0%,
+                  rgba(106, 0, 213, 0.1) 40%,
+                  transparent 70%
+                );
+                --cx: -80px;
+                --cy: -60px;
+                --dur: 11s;
+                --delay: -2s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.5) 0%,
+                  rgba(106, 0, 213, 0.12) 40%,
+                  transparent 70%
+                );
+                --cx: 50px;
+                --cy: 85px;
+                --dur: 8.5s;
+                --delay: -4s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 12px;
+                height: 12px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.35) 0%,
+                  rgba(106, 0, 213, 0.08) 40%,
+                  transparent 70%
+                );
+                --cx: -100px;
+                --cy: 25px;
+                --dur: 13s;
+                --delay: -1s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 26px;
+                height: 26px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.55) 0%,
+                  rgba(106, 0, 213, 0.14) 40%,
+                  transparent 70%
+                );
+                --cx: 35px;
+                --cy: -100px;
+                --dur: 6s;
+                --delay: -3s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 16px;
+                height: 16px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.45) 0%,
+                  rgba(106, 0, 213, 0.1) 40%,
+                  transparent 70%
+                );
+                --cx: -55px;
+                --cy: 75px;
+                --dur: 9.5s;
+                --delay: -5s;
+              "
+            ></div>
+            <div
+              class="story__el story__converge-orb"
+              style="
+                top: 50%;
+                left: 50%;
+                width: 18px;
+                height: 18px;
+                background: radial-gradient(
+                  circle,
+                  rgba(167, 139, 250, 0.45) 0%,
+                  rgba(106, 0, 213, 0.1) 40%,
+                  transparent 70%
+                );
+                --cx: 75px;
+                --cy: 40px;
+                --dur: 10s;
+                --delay: -7s;
+              "
+            ></div>
+            <!-- Center glow -->
+            <div class="story__el story__center-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. OUR COMPANIES (dark)
+         ========================================== -->
+    <section class="companies">
+      <div class="container">
+        <span class="label label--violet-light reveal">Our Companies</span>
+        <h2 class="companies__heading reveal">The teams behind Done.ai</h2>
+        <div class="companies__grid">
+          <div class="company-card reveal reveal-d1">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbdf060144da65bdf4a2d_oflow-full-logo.png"
+              alt="Oflow"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Automated payment reminders and collection
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Payments</span>
+              <span class="company-card__tag">Collection</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://oflow.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d2">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbe1b5716a900f3252ec2_huddlestock_logo.svg"
+              alt="Huddlestock"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Integrated investment infrastructure
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Fintech</span>
+              <span class="company-card__tag">Investment</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://huddlestock.com/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d3">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbe4ce0dcda8beb07f394_fullstakk-logo.svg"
+              alt="Fullstakk"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">Data-driven digital marketing</p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Marketing</span>
+              <span class="company-card__tag">Growth</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.fullstakk.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d1">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbcceb213150827ca2e64_weassist-logo.svg"
+              alt="WeAssist"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Digital strategy and scaling solutions
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Strategy</span>
+              <span class="company-card__tag">Innovation</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.weassist.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d2">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbcf360144da65bdf2cc5_accountabl-logo.svg"
+              alt="Accountabl"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">Real-time expense management</p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Expenses</span>
+              <span class="company-card__tag">Finance</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.accountabl.eco/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d3">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbd2367994bbc7344c7b0_frisikt_logo.svg"
+              alt="Frisikt"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Accounting, ERP, and business advisory
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Accounting</span>
+              <span class="company-card__tag">ERP</span>
+              <span class="company-card__tag">Advisory</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.frisikt.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d1">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbd480e928d1f9effef2b_metamanager-logo.svg"
+              alt="MetaManager"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              AI-powered SEO and content optimization
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">SEO</span>
+              <span class="company-card__tag">Marketing</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://metamanager.io/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d2">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbd749e2f67547de32501_masterplan-logo.svg"
+              alt="Masterplan"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">Cloud-based manufacturing and ERP</p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Manufacturing</span>
+              <span class="company-card__tag">ERP</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.masterplanerp.com/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d3">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbd95d0107831c68d7ebb_jcloud-logo.svg"
+              alt="JCloud"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">Scalable cloud infrastructure</p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Cloud</span>
+              <span class="company-card__tag">Infrastructure</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://jcloud.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d1">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bbe61d236db1651b18906_debet-logo%20(1).png"
+              alt="Debet"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Invoicing, billing, and debt collection
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">Invoicing</span>
+              <span class="company-card__tag">Collection</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.debet.no/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d2">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bc039f14bee78d17223ad_plorea-logo.svg"
+              alt="Plorea"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">
+              Cloud-based point-of-sale and payments
+            </p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">POS</span>
+              <span class="company-card__tag">Payments</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://plorea.com/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+
+          <div class="company-card reveal reveal-d3">
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/699bc2a88d3725bc4a7b5740_innomate%20logo.svg"
+              alt="Innomate"
+              class="company-card__logo"
+            />
+            <p class="company-card__desc">End-to-end HR automation</p>
+            <div class="company-card__tags">
+              <span class="company-card__tag">HR</span>
+              <span class="company-card__tag">Recruitment</span>
+            </div>
+            <div class="company-card__link">
+              <a
+                href="https://www.innomate.com/"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow link-arrow--light"
+                >Visit website</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. LEADERSHIP (light)
+         ========================================== -->
+    <section class="leadership">
+      <div class="container">
+        <span class="label label--violet reveal">Management Team</span>
+        <h2 class="leadership__heading reveal">Your partners in innovation</h2>
+        <div class="leadership__grid">
+          <!-- Staffan Herbst -->
+          <div class="leader-card reveal reveal-d1">
+            <div class="leader-card__header">
+              <img
+                src="https://cdn.prod.website-files.com/67e3e64e789e29dcb11d8a73/6853c77078406a12f2134df6_Staffan%20Herbst.webp"
+                alt="Staffan Herbst"
+                class="leader-card__photo"
+              />
+              <div class="leader-card__name">Staffan Herbst</div>
+              <div class="leader-card__title">CEO</div>
+            </div>
+            <p class="leader-card__bio">
+              Staffan has experience in leadership roles across
+              technology-driven businesses, particularly in the fintech sector.
+              Previously CFO in PE-backed payments company Payen in London. 15
+              years solid finance and fintech experience within global
+              organisations such as UBS, Credit Suisse and SPENN.
+            </p>
+          </div>
+
+          <!-- Philip Gunnarsson -->
+          <div class="leader-card reveal reveal-d2">
+            <div class="leader-card__header">
+              <img
+                src="https://cdn.prod.website-files.com/67e3e64e789e29dcb11d8a73/6862b6eee7ea1f24e3034e4b_Philip-Gunnarsson-CFO.png"
+                alt="Philip Gunnarsson"
+                class="leader-card__photo"
+              />
+              <div class="leader-card__name">Philip Gunnarsson</div>
+              <div class="leader-card__title">CFO</div>
+            </div>
+            <p class="leader-card__bio">
+              Philip recently served as Investment Director at Athanase
+              Innovation in New York, and before that as Group CFO of DistIT AB,
+              listed on Nasdaq First North Premier. Extensive experience in
+              public equity investments, building on a foundation in M&amp;A and
+              corporate finance from Citigroup.
+            </p>
+          </div>
+
+          <!-- Lars Rydtzander -->
+          <div class="leader-card reveal reveal-d1">
+            <div class="leader-card__header">
+              <img
+                src="https://cdn.prod.website-files.com/67e3e64e789e29dcb11d8a73/699235c93a3acc0ce15a8f4c_Lars-IR.png"
+                alt="Lars Rydtzander"
+                class="leader-card__photo"
+              />
+              <div class="leader-card__name">Lars Rydtzander</div>
+              <div class="leader-card__title">CPO</div>
+            </div>
+            <p class="leader-card__bio">
+              20 years commercial and service design experience within emerging
+              technologies in a multi-national context. Passion for
+              value-creating product development where the customer is in the
+              center. Lecturer in change management and technology application
+              within business.
+            </p>
+          </div>
+
+          <!-- Stefan Willebrand -->
+          <div class="leader-card reveal reveal-d2">
+            <div class="leader-card__header">
+              <img
+                src="https://cdn.prod.website-files.com/67e3e64e789e29dcb11d8a73/6853ca72fd3f35334b292341_Stefan%20Willebrand_.webp"
+                alt="Stefan Willebrand"
+                class="leader-card__photo"
+              />
+              <div class="leader-card__name">Stefan Willebrand</div>
+              <div class="leader-card__title">CIO</div>
+            </div>
+            <p class="leader-card__bio">
+              An experienced finance and tech entrepreneur with over 27 years of
+              hands-on experience. Stefan has founded, scaled, listed and exited
+              multiple companies based on deep financial domain knowledge and
+              technology. At Done.ai he focuses on internal systems, fintech
+              products, automation and engineering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. CLOSING (quote + CTA as inset dark card)
+         ========================================== -->
+    <section class="closing">
+      <div class="container">
+        <div class="closing__card reveal">
+          <div class="closing__content">
+            <!-- Quote -->
+            <div class="closing__quote">
+              <div class="closing__quote-mark">&ldquo;</div>
+              <p class="closing__quote-text">
+                The future of business software isn't about more tools &mdash;
+                it's about less noise. At Done.ai, we're building intelligence
+                into the system itself, so it works without getting in your way.
+              </p>
+              <p class="closing__quote-attr">
+                &mdash; Staffan Herbst, CEO at Done.ai
+              </p>
+            </div>
+
+            <hr class="closing__divider" />
+
+            <!-- CTA -->
+            <div class="closing__cta">
+              <h2 class="closing__cta-title">Smarter business starts here</h2>
+              <p class="closing__cta-body">
+                Find the product that solves your biggest problem today. The
+                rest is already connected when you need it.
+              </p>
+              <div class="closing__cta-actions">
+                <a href="/get-started" class="btn btn--white"
+                  >Get started &rarr;</a
+                >
+                <a href="/contact" class="btn btn--outline-light"
+                  >Talk to us first &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. FOOTER
+         ========================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <svg
+                viewBox="0 0 485 156"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M53.3182 44.3431C68.7584 44.3431 83.5902 50.8843 89.5229 61.6088H90.3596C89.9793 59.4031 89.7511 56.9691 89.7511 51.2646V0H111.504V152.501H91.3483V145.808C91.3483 141.168 91.5765 137.897 91.7286 135.235H91.1202C84.1987 148.47 69.5951 155.771 52.4816 155.771C21.1447 155.771 0 132.573 0 100.095C0 67.6175 21.7532 44.4192 53.2422 44.4192L53.3182 44.3431ZM90.5117 99.8671C90.5117 78.7224 76.2884 63.6624 56.3606 63.6624C36.4328 63.6624 22.2096 78.7224 22.2096 99.8671C22.2096 121.012 36.8131 136.072 56.3606 136.072C75.9081 136.072 90.5117 120.86 90.5117 99.8671Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M127.795 100.096C127.795 67.9986 151.374 44.4199 183.471 44.4199C215.568 44.4199 239.375 67.9986 239.375 100.096C239.375 132.193 215.568 155.772 183.471 155.772C151.374 155.772 127.795 131.965 127.795 100.096ZM217.09 99.8678C217.09 78.7231 203.247 63.6632 183.547 63.6632C163.848 63.6632 150.005 78.7231 150.005 99.8678C150.005 121.013 164 136.073 183.547 136.073C203.095 136.073 217.09 120.86 217.09 99.8678Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M343.063 47.2852V152.172H321.082V66.3763H277.575V152.172H255.594V47.2852H343.063Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M415.01 155.772C382.456 155.772 359.105 131.965 359.105 100.096C359.105 68.2267 382.456 44.4199 414.629 44.4199C446.803 44.4199 466.274 67.9986 466.274 100.096C466.274 100.096 466.046 106.029 465.666 108.006H382.076C384.89 125.272 397.288 136.073 415.238 136.073C433.188 136.073 437.6 131.433 445.13 121.849L457.908 135.084C447.563 148.927 432.884 155.848 415.01 155.848V155.772ZM382.076 92.1857H444.521C442.924 75.5286 431.135 63.7392 414.249 63.7392C397.364 63.7392 384.966 74.9201 382.152 92.1857H382.076Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M455.019 34.7392C455.893 33.1377 457.058 31.9729 458.368 31.0994C459.824 30.2258 461.425 29.7891 463.172 29.7891C464.919 29.7891 466.084 30.0803 467.249 30.6626C468.414 31.245 469.287 32.1185 470.015 32.9921V30.0802H474.237V50.0262H470.015V47.1144C469.287 47.9879 468.414 48.8615 467.103 49.4438C465.939 50.0262 464.483 50.3174 463.027 50.3174C461.571 50.3174 459.678 49.8806 458.368 49.007C456.912 48.1335 455.747 46.8232 455.019 45.3673C454.146 43.7658 453.709 42.0187 453.709 39.9804C453.709 37.9421 454.146 36.1951 455.019 34.5936V34.7392ZM469.287 36.6318C468.705 35.6127 467.977 34.8847 467.103 34.3024C466.23 33.72 465.211 33.5744 464.192 33.5744C463.172 33.5744 462.153 33.8656 461.28 34.3024C460.406 34.8847 459.678 35.6127 459.096 36.6318C458.514 37.651 458.222 38.8157 458.222 40.2716C458.222 41.7275 458.514 42.8922 459.096 43.9114C459.678 44.9305 460.406 45.8041 461.28 46.2408C462.153 46.8232 463.172 47.1144 464.192 47.1144C465.211 47.1144 466.23 46.8232 467.103 46.3864C467.977 45.9497 468.705 45.0761 469.287 44.057C469.87 43.0378 470.161 41.8731 470.161 40.4172C470.161 38.9613 469.87 37.7966 469.287 36.7774V36.6318Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M479.962 26.8785C479.526 26.4418 479.234 25.7138 479.234 24.9859C479.234 24.2579 479.526 23.6756 479.962 23.0932C480.399 22.6564 481.127 22.3652 481.855 22.3652C482.583 22.3652 483.165 22.6564 483.748 23.0932C484.184 23.53 484.476 24.2579 484.476 24.9859C484.476 25.7138 484.184 26.2962 483.748 26.8785C483.311 27.3153 482.583 27.6065 481.855 27.6065C481.127 27.6065 480.545 27.3153 479.962 26.8785ZM483.893 30.2271V50.1731H479.817V30.2271H483.893Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div class="footer__company-info">
+              <span>Done.ai Group AB</span>
+              <span>+46 10 490 07 00</span>
+              <span>contact@done.ai</span>
+              <span>Birger Jarlsgatan 2</span>
+              <span>114 34 Stockholm</span>
+              <span>Organization number 559120-8870</span>
+            </div>
+            <div class="footer__socials">
+              <a href="#" class="footer__social-icon" aria-label="Facebook"
+                ><svg
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  /></svg
+              ></a>
+              <a href="#" class="footer__social-icon" aria-label="Instagram"
+                ><svg
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg
+              ></a>
+              <a href="#" class="footer__social-icon" aria-label="LinkedIn"
+                ><svg
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" /></svg
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Products</h4>
+            <div class="footer__links">
+              <a href="#" class="footer__link">CRM</a>
+              <a href="#" class="footer__link">Accounting</a>
+              <a href="#" class="footer__link">MRP</a>
+              <a href="#" class="footer__link">Marketing</a>
+              <a href="#" class="footer__link">Investor Services</a>
+              <a href="#" class="footer__link">Corporate Cards</a>
+              <a href="#" class="footer__link">Hosting</a>
+              <a href="#" class="footer__link">HR</a>
+              <a href="#" class="footer__link">POS</a>
+              <a href="#" class="footer__link">Debt Collection</a>
+              <a href="#" class="footer__link">BNPL</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Our Companies</h4>
+            <div class="footer__links">
+              <a
+                href="https://www.frisikt.no/"
+                target="_blank"
+                class="footer__link"
+                >Frisikt</a
+              >
+              <a
+                href="https://www.debet.no/"
+                target="_blank"
+                class="footer__link"
+                >Debet</a
+              >
+              <a
+                href="https://www.fullstakk.no/"
+                target="_blank"
+                class="footer__link"
+                >Fullstakk</a
+              >
+              <a href="https://jcloud.no/" target="_blank" class="footer__link"
+                >JCloud</a
+              >
+              <a
+                href="https://www.innomate.com/"
+                target="_blank"
+                class="footer__link"
+                >Innomate</a
+              >
+              <a
+                href="https://www.weassist.no/"
+                target="_blank"
+                class="footer__link"
+                >WeAssist</a
+              >
+              <a href="https://oflow.no/" target="_blank" class="footer__link"
+                >Oflow</a
+              >
+              <a
+                href="https://huddlestock.com/"
+                target="_blank"
+                class="footer__link"
+                >Huddlestock</a
+              >
+              <a
+                href="https://www.accountabl.eco/"
+                target="_blank"
+                class="footer__link"
+                >Accountabl</a
+              >
+              <a
+                href="https://metamanager.io/"
+                target="_blank"
+                class="footer__link"
+                >MetaManager</a
+              >
+              <a
+                href="https://www.masterplanerp.com/"
+                target="_blank"
+                class="footer__link"
+                >Masterplan</a
+              >
+              <a href="https://plorea.com/" target="_blank" class="footer__link"
+                >Plorea</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Company</h4>
+            <div class="footer__links">
+              <a href="/about" class="footer__link">About</a>
+              <a href="#" class="footer__link">Careers</a>
+              <a href="/contact" class="footer__link">Contact</a>
+              <a href="#" class="footer__link">Press</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer__col-title">Legal</h4>
+            <div class="footer__links">
+              <a href="#" class="footer__link">Privacy Policy</a>
+              <a href="#" class="footer__link">Terms of Service</a>
+              <a href="#" class="footer__link">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+        <hr class="footer__divider" />
+        <div class="footer__bottom">
+          <div class="footer__legal">
+            <span>Customer License Agreement</span>
+            <span class="footer__legal-sep">&middot;</span>
+            <span>Data Processing Agreement</span>
+            <span class="footer__legal-sep">&middot;</span>
+            <span>Transparency Act</span>
+            <span class="footer__legal-sep">&middot;</span>
+            <span>Standards of Business Conduct</span>
+            <span class="footer__legal-sep">&middot;</span>
+            <span>Cookies</span>
+          </div>
+          <div>Copyright &copy; 2026 Done.ai</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+         Scripts
+         ========================================== -->
+    <script>
+      (function () {
+        /* Header scroll */
+        var header = document.getElementById("header");
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (window.scrollY > 50) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          },
+          { passive: true }
+        );
+
+        /* Mobile menu */
+        var hamburger = document.getElementById("hamburger");
+        var navLinks = document.querySelector(".header__nav-links");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("is-open");
+            navLinks.classList.toggle("is-open");
+            hamburger.setAttribute(
+              "aria-expanded",
+              navLinks.classList.contains("is-open")
+            );
+          });
+        }
+
+        /* Scroll reveal */
+        var reveals = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("revealed");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+          );
+          reveals.forEach(function (el) {
+            observer.observe(el);
+          });
+        } else {
+          reveals.forEach(function (el) {
+            el.classList.add("revealed");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

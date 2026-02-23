@@ -113,35 +113,17 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
-        width: 280px;
-        height: 280px;
-        border-radius: var(--radius-xl);
-        background: rgba(251, 251, 251, 0.06);
-        border: 1px solid rgba(251, 251, 251, 0.1);
-        backdrop-filter: blur(8px);
+        width: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .mr-hero-visual-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        padding: 32px;
+      .mr-hero-visual-img {
         width: 100%;
-      }
-
-      .mr-hero-visual-cell {
-        aspect-ratio: 1;
-        border-radius: var(--radius-md);
-        background: rgba(251, 251, 251, 0.08);
-        border: 1px solid rgba(251, 251, 251, 0.06);
-      }
-
-      .mr-hero-visual-cell.--active {
-        background: rgba(106, 0, 213, 0.4);
-        border-color: rgba(106, 0, 213, 0.3);
+        height: auto;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
       }
 
       .mr-hero h1 {
@@ -654,17 +636,11 @@
             <a href="/contact" class="mr-btn-primary">Request a demo</a>
           </div>
           <div class="mr-hero-visual">
-            <div class="mr-hero-visual-grid">
-              <div class="mr-hero-visual-cell"></div>
-              <div class="mr-hero-visual-cell --active"></div>
-              <div class="mr-hero-visual-cell"></div>
-              <div class="mr-hero-visual-cell --active"></div>
-              <div class="mr-hero-visual-cell"></div>
-              <div class="mr-hero-visual-cell --active"></div>
-              <div class="mr-hero-visual-cell"></div>
-              <div class="mr-hero-visual-cell"></div>
-              <div class="mr-hero-visual-cell --active"></div>
-            </div>
+            <img
+              src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/69925065525984c0f85d8150_magnified-image%201.png"
+              alt="Done MRP interface preview"
+              class="mr-hero-visual-img"
+            />
           </div>
         </div>
       </section>
@@ -1393,13 +1369,12 @@
           <div class="mr-slides-track">
             <div class="mr-slide">
               <img
-                src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694022744e53777b5d941176_LHL-logo.svg"
-                alt="Company"
+                src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/693fef1f44213c416d29cc00_TriGemini-logo.svg"
+                alt="Tri Gemini"
                 class="mr-slide-logo"
               />
               <blockquote class="mr-slide-quote">
-                "Done MRP gave us full visibility into production without the
-                complexity of a traditional ERP."
+                "Tasks that used to take hours now take seconds."
               </blockquote>
               <div class="mr-slide-author">
                 <strong>Thomas Radtke</strong> <span>| CEO at Tri Gemini</span>
@@ -1408,31 +1383,31 @@
             <div class="mr-slide">
               <img
                 src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694022744e53777b5d941176_LHL-logo.svg"
-                alt="Company"
+                alt="LHL Førstehjelp"
                 class="mr-slide-logo"
               />
               <blockquote class="mr-slide-quote">
-                "Planning and inventory finally work together. Our lead times
-                dropped significantly."
+                "Accessible for all our employees, regardless of technical skill
+                level."
               </blockquote>
               <div class="mr-slide-author">
-                <strong>Anna Lindqvist</strong>
-                <span>| COO at Nordic Manufacturing</span>
+                <strong>Amund Heggbrenna</strong>
+                <span>| Operations and Systems Manager at LHL Førstehjelp</span>
               </div>
             </div>
             <div class="mr-slide">
               <img
-                src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694022744e53777b5d941176_LHL-logo.svg"
-                alt="Company"
+                src="https://cdn.prod.website-files.com/63cf97b6a9ebdc5f745cff2f/694027ff95ee3f525cb4a272_aerox-logo.svg"
+                alt="Aerox"
                 class="mr-slide-logo"
               />
               <blockquote class="mr-slide-quote">
-                "The Finago integration means our finance team and production
-                team are finally on the same page."
+                "Created a strong initiative to continually optimize internal
+                strategy."
               </blockquote>
               <div class="mr-slide-author">
-                <strong>Erik Johansson</strong>
-                <span>| CFO at Scandia Parts</span>
+                <strong>Scott Ashton</strong>
+                <span>| CEO & President at Aerox</span>
               </div>
             </div>
           </div>
